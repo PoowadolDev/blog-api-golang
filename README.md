@@ -1,5 +1,5 @@
 
-# Blog Website Project in Golang
+# Blog API Project in Golang
 
 ## Overview
 This project is created to help me understand how to write functions, methods, and interfaces in Golang. It also aims to explore the development of hexagonal architecture in Golang.
