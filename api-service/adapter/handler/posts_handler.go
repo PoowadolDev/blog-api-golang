@@ -41,6 +41,11 @@ func (p *PostHandler) CreatePost(c *fiber.Ctx) error {
 		return c.Status(400).JSON(fiber.Map{"status": "error", "message": err.Error()})
 	}
 
+	if (post.Title == "") || (post.Content == "") {
+		c.Status(400)
+		return c.Status(400).JSON(fiber.Map{"status": "error", "message": "Title and Content are required"})
+	}
+
 	if post, err = p.postsService.CreatePost(post); err != nil {
 		return c.Status(500).JSON(fiber.Map{"status": "error", "message": err.Error()})
 	}
@@ -56,6 +61,12 @@ func (p *PostHandler) UpdatePost(c *fiber.Ctx) error {
 	if err = c.BodyParser(&post); err != nil {
 		return c.Status(400).JSON(fiber.Map{"status": "error", "message": err.Error()})
 	}
+
+	if (post.Title == "") || (post.Content == "") {
+		c.Status(400)
+		return c.Status(400).JSON(fiber.Map{"status": "error", "message": "Title and Content are required"})
+	}
+
 	if post, err = p.postsService.UpdatePost(id, post); err != nil {
 		return c.Status(500).JSON(fiber.Map{"status": "error", "message": err.Error()})
 	}
