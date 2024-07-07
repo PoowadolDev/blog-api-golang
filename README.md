@@ -25,12 +25,12 @@ type Posts struct {
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/PoowadolDev/blog-website-golang.git
+git clone https://github.com/PoowadolDev/blog-api-golang.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd blog-website-golang/api-service
+cd blog-api-golang/api-service
 ```
 
 3. Install the dependencies:
